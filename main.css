@@ -1,0 +1,23 @@
+h1 {
+  color: blue;
+  weight: 40px;
+  text-alight: center;
+}
+p{
+  background-color: #f7efef;
+  font-size: 16px;
+}
+h2 {
+  color:blue;
+  font-size: 15px;
+}
+
+.selectedText {
+  color: red;
+  font-weight: bold;
+}
+
+.cursiveText {
+  color: blue;
+  font-weight: inherit;
+}
