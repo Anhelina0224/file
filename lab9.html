@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lb 9</title>
+	<link type="text/css" href="../lab9.css" rel="stylesheet">
+  </head>
+
+  <body>
+	<div align="center">
+		<br><button id="show-modal" class="btn">введіть квартиру</button>
+	</div>
+
+    <script src="../modal.js"></script>
+    <script>
+        (function () {
+            var modal = $modal({
+  			title: 'Введіть дані будь ласка.',
+  			content: '\
+  			<form name="form_name" method="" action="">\
+  				Введіть вулицю:<input id="target" name="street" type="" >\
+				<br><br>Введіть номер будинку:<input name="house_number" type="" >\
+				<br><br>Введіть кількість квартир:<input name="numOfFlat" type="" >\
+  				<div align="right">\
+  					<br><br>\
+  					<input type=submit id="cm" name="b_submit" ></input>\
+      				<input type=reset name="b_reset" ></input>\
+      			</div>\
+  			</form>',
+		});
+
+            document.querySelector('#show-modal').addEventListener('click', function () {
+                modal.show();
+            });
+        })();
+
+       	document.forms.form_name.onsubmit = function() {
+       		if(this.street.value == "" ||
+       			this.house_number.value == "" ||
+       			this.numOfFlat.value == "" )
+       		{
+       			alert("Error input data!");
+            modal.close();
+       		}
+       		else {
+
+       			alert("Ви ввели такі дані:" +
+  				"\n\назва вулиці: " + this.street.value +
+  				"\nНомер будинку: " + this.house_number.value +
+  				"\nКількість квартир: " + this.numOfFlat.value );
+            modal.close();
+       		}
+
+  			return false;
+		};
+    </script>
+  </body>
+</html>
